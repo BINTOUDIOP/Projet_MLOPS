@@ -1,0 +1,11 @@
+artifact_location: /Users/boss/Documents/learning/vs_code/ml_ops/mlruns_artifacts/Random
+  Forest/models/m-d27d1faad8764780848d15ce425ceb1b/artifacts
+creation_timestamp: 1760737133700
+experiment_id: '562938007012629357'
+last_updated_timestamp: 1760737141235
+model_id: m-d27d1faad8764780848d15ce425ceb1b
+model_type: null
+name: model
+source_run_id: 25789fded50a404e8e86c1e48694ec6b
+status: 2
+status_message: null

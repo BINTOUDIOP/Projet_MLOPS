@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/boss/Documents/learning/vs_code/ml_ops/mlruns/771453735617425478/4fb869a524a0434fb0f2d0e5943e3f54/artifacts
+end_time: 1760733912774
+entry_point_name: ''
+experiment_id: '771453735617425478'
+lifecycle_stage: active
+run_id: 4fb869a524a0434fb0f2d0e5943e3f54
+run_name: RandomForest_baseline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760733901444
+status: 3
+tags: []
+user_id: boss

@@ -1,0 +1,11 @@
+artifact_location: /Users/boss/Documents/learning/vs_code/ml_ops/mlruns_artifacts/Logistic
+  Regression/models/m-9ea223fecc1b4009970f8f0996d85431/artifacts
+creation_timestamp: 1760737113059
+experiment_id: '815081096605372646'
+last_updated_timestamp: 1760737121561
+model_id: m-9ea223fecc1b4009970f8f0996d85431
+model_type: null
+name: model
+source_run_id: f8ec9de3d626434d9de9c7b1c3ce9279
+status: 2
+status_message: null

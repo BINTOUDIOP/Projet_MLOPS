@@ -1,0 +1,27 @@
+# Core Python data stack
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# Machine Learning models
+xgboost
+lightgbm
+
+# Experiment tracking
+mlflow
+
+# Deployment / App
+streamlit
+flask
+
+# Model serialization
+joblib
+
+# Automation / CI/CD
+pytest
+flake8
+
+# Optional workflow orchestration
+prefect

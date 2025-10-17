@@ -1,0 +1,10 @@
+artifact_location: file:///Users/boss/Documents/learning/vs_code/ml_ops/mlruns/771453735617425478/models/m-94b4fc1805f145168064924377361c81/artifacts
+creation_timestamp: 1760733902346
+experiment_id: '771453735617425478'
+last_updated_timestamp: 1760733912766
+model_id: m-94b4fc1805f145168064924377361c81
+model_type: null
+name: model
+source_run_id: 4fb869a524a0434fb0f2d0e5943e3f54
+status: 2
+status_message: null

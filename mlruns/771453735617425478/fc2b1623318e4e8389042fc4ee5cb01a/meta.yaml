@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/boss/Documents/learning/vs_code/ml_ops/mlruns/771453735617425478/fc2b1623318e4e8389042fc4ee5cb01a/artifacts
+end_time: 1760736128737
+entry_point_name: ''
+experiment_id: '771453735617425478'
+lifecycle_stage: active
+run_id: fc2b1623318e4e8389042fc4ee5cb01a
+run_name: Decision Tree
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760736121289
+status: 3
+tags: []
+user_id: boss

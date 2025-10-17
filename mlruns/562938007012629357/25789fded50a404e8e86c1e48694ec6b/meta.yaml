@@ -1,0 +1,15 @@
+artifact_uri: /Users/boss/Documents/learning/vs_code/ml_ops/mlruns_artifacts/Random
+  Forest/25789fded50a404e8e86c1e48694ec6b/artifacts
+end_time: 1760737141259
+entry_point_name: ''
+experiment_id: '562938007012629357'
+lifecycle_stage: active
+run_id: 25789fded50a404e8e86c1e48694ec6b
+run_name: Random Forest_run
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760737130660
+status: 3
+tags: []
+user_id: boss

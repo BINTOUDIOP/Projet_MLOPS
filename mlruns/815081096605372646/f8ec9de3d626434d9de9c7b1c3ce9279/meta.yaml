@@ -1,0 +1,15 @@
+artifact_uri: /Users/boss/Documents/learning/vs_code/ml_ops/mlruns_artifacts/Logistic
+  Regression/f8ec9de3d626434d9de9c7b1c3ce9279/artifacts
+end_time: 1760737121567
+entry_point_name: ''
+experiment_id: '815081096605372646'
+lifecycle_stage: active
+run_id: f8ec9de3d626434d9de9c7b1c3ce9279
+run_name: Logistic Regression_run
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760737111682
+status: 3
+tags: []
+user_id: boss

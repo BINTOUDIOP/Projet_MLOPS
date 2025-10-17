@@ -1,0 +1,11 @@
+artifact_location: /Users/boss/Documents/learning/vs_code/ml_ops/mlruns_artifacts/Decision
+  Tree/models/m-ab92526380cc44b68112111349162cb0/artifacts
+creation_timestamp: 1760737122557
+experiment_id: '936872313714182826'
+last_updated_timestamp: 1760737130635
+model_id: m-ab92526380cc44b68112111349162cb0
+model_type: null
+name: model
+source_run_id: 31e50fc9dfad448ea0bf4a3b8ab91851
+status: 2
+status_message: null
