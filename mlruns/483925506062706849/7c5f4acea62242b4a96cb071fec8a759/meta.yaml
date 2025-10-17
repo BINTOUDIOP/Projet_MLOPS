@@ -1,0 +1,14 @@
+artifact_uri: /Users/bintoudiop/Documents/Dossier_École/Formation data analytics/MLOPS/Projet_MLOPS/mlartifacts/RandomForest/7c5f4acea62242b4a96cb071fec8a759/artifacts
+end_time: 1760692008233
+entry_point_name: ''
+experiment_id: '483925506062706849'
+lifecycle_stage: active
+run_id: 7c5f4acea62242b4a96cb071fec8a759
+run_name: RandomForest_run
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760692005510
+status: 3
+tags: []
+user_id: bintoudiop

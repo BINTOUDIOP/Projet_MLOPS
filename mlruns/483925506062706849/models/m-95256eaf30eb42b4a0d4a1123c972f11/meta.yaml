@@ -1,0 +1,10 @@
+artifact_location: /Users/bintoudiop/Documents/Dossier_École/Formation data analytics/MLOPS/Projet_MLOPS/mlartifacts/RandomForest/models/m-95256eaf30eb42b4a0d4a1123c972f11/artifacts
+creation_timestamp: 1760692006482
+experiment_id: '483925506062706849'
+last_updated_timestamp: 1760692008230
+model_id: m-95256eaf30eb42b4a0d4a1123c972f11
+model_type: ''
+name: model
+source_run_id: 7c5f4acea62242b4a96cb071fec8a759
+status: 2
+status_message: null
