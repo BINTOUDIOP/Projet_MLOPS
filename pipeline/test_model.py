@@ -2,9 +2,9 @@
 
 import pickle
 import pandas as pd
+import os
 
-#  Chemin du modèle
-MODEL_PATH = "BestModel_LogisticRegression_0.9920.pkl"
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "BestModel_LogisticRegression_0.9920.pkl")
 
 # Chargement du modèle
 with open(MODEL_PATH, "rb") as f:
