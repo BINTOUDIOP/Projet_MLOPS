@@ -4,7 +4,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy source code to working directory
-COPY ..  /app/
+COPY . /app/
 
 # Install packages from requirements.txt
 
@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir --upgrade pip &&\
 # Exposer le port (celui que tu utilises pour Flask)
 EXPOSE 5051
 
-CMD ["python", "pipeline/application_flask.py"]
+CMD ["python", "application_flask.py"]
