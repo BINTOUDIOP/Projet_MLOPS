@@ -11,7 +11,8 @@ COPY . /app/
 RUN pip install --no-cache-dir --upgrade pip &&\
     pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
-# Exposer le port (celui que tu utilises pour Flask)
+
 EXPOSE 5051
+ENV PORT=5051
 
 CMD ["python", "application_flask.py"]
