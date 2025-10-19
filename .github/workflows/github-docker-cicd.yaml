@@ -57,7 +57,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t $DOCKER_USER/$REPO_NAME:latest .
+        run: docker build -t $DOCKER_USER/$REPO_NAME:latest ./pipeline
 
       - name: Push Docker image
         run: docker push $DOCKER_USER/$REPO_NAME:latest
