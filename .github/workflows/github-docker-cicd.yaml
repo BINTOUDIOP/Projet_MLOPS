@@ -57,10 +57,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t $DOCKER_USER/$REPO_NAME:latest ./pipeline
+        run: docker build -t ${{ secrets.DOCKER_USER }}/${{ secrets.REPO_NAME }}:latest ./pipeline
 
       - name: Push Docker image
-        run: docker push $DOCKER_USER/$REPO_NAME:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/${{ secrets.REPO_NAME }}:latest
 
       - name: Login to Azure
         uses: azure/login@v1
@@ -69,15 +69,15 @@ jobs:
 
       - name: Deploy to Azure Web App
         run: |
+          echo "Déploiement de l'image Docker sur Azure..."
           az webapp config container set \
             --name ${{ secrets.AZURE_WEBAPP_NAME }} \
             --resource-group ${{ secrets.AZURE_RG }} \
-            --container-image-name $DOCKER_USER/$REPO_NAME:latest \
+            --docker-custom-image-name ${{ secrets.DOCKER_USER }}/${{ secrets.REPO_NAME }}:latest \
             --docker-registry-server-url https://index.docker.io \
-            --docker-registry-server-user $DOCKER_USER \
+            --docker-registry-server-user ${{ secrets.DOCKER_USER }} \
             --docker-registry-server-password ${{ secrets.DOCKER_PASSWORD }}
 
-          
           az webapp deployment container config \
             --name ${{ secrets.AZURE_WEBAPP_NAME }} \
             --resource-group ${{ secrets.AZURE_RG }} \
