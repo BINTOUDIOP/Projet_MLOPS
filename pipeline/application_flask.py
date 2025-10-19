@@ -5,14 +5,20 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
-
+# Définir le chemin absolu du modèle
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "BestModel_LogisticRegression_0.9920.pkl")
 
-# Chargement du pipeline complet
-with open(MODEL_PATH, "rb") as f:
-    pipeline = pickle.load(f)
+# Chargement du pipeline
+try:
+    with open(MODEL_PATH, "rb") as f:
+        pipeline = pickle.load(f)
+    print(" Modèle chargé avec succès.")
+except Exception as e:
+    pipeline = None
+    print(f" Erreur lors du chargement du modèle : {e}")
 
+# Liste des features utilisées pour la prédiction
 FEATURES = [
     "credit_lines_outstanding",
     "loan_amt_outstanding",
@@ -23,46 +29,49 @@ FEATURES = [
 ]
 
 def model_pred(features):
-
+    """Fait une prédiction avec le pipeline ML."""
     df = pd.DataFrame([features])
     prediction = int(pipeline.predict(df)[0])
     probability = float(pipeline.predict_proba(df)[:, 1][0])
     return prediction, probability
 
 
-
 @app.route("/", methods=["GET"])
 def home():
-    # On passe la liste des features à l’interface HTML
-    return render_template("index.html", features=FEATURES)
-
+    """Page d’accueil simple (HTML si présent ou JSON par défaut)."""
+    try:
+        return render_template("index.html", features=FEATURES)
+    except Exception:
+        return jsonify({
+            "message": "Bienvenue sur l’API de scoring MLOps déployée sur Azure ",
+            "features": FEATURES
+        })
 
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    """Endpoint principal de prédiction."""
+    if pipeline is None:
+        return jsonify({"error": "Le modèle n’a pas été chargé."}), 500
+
     try:
         data = request.get_json()
 
-
+        # Vérification des clés attendues
         for feature in FEATURES:
             if feature not in data:
-                return jsonify({"error": f"Valeur manquante pour {feature}"}), 400
-
+                return jsonify({"error": f"Valeur manquante pour '{feature}'"}), 400
 
         prediction, probability = model_pred(data)
 
-
         if prediction == 1:
             interpretation = (
-                f"⚠ Le modèle estime que ce client présente un RISQUE ÉLEVÉ "
-                f"de faire défaut sur le prêt (probabilité {probability*100:.1f}%)."
+                "Risque ÉLEVÉ : le client présente une probabilité élevée de défaut."
             )
         else:
             interpretation = (
-                f" Le client semble fiable : faible probabilité de défaut "
-                f"({probability*100:.1f}%). Le prêt peut être accordé."
+                "  Le client semble fiable : le prêt peut être accordé."
             )
-
 
         return jsonify({
             "predicted_class": prediction,
@@ -77,4 +86,6 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5051, debug=True)
+    # Azure définit automatiquement la variable d’environnement PORT
+    port = int(os.environ.get("PORT", 5051))
+    app.run(host="0.0.0.0", port=port)
