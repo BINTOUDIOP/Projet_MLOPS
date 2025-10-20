@@ -75,7 +75,7 @@ jobs:
             --name ${{ secrets.AZURE_WEBAPP_NAME }} \
             --resource-group ${{ secrets.AZURE_RG }} \
             --docker-custom-image-name "${{ secrets.DOCKER_USER }}/${{ secrets.REPO_NAME }}:latest" \
-            --docker-registry-server-url https://index.docker.io \
+            --docker-registry-server-url "https://index.docker.io" \
             --docker-registry-server-user ${{ secrets.DOCKER_USER }} \
             --docker-registry-server-password ${{ secrets.DOCKER_PASSWORD }}
 
